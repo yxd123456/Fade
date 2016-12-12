@@ -20,6 +20,12 @@ add_library( # Sets the name of the library.
              # file are automatically included.
              src/main/cpp/native-lib.cpp
              src/main/cpp/test.cpp
+              src/main/cpp/cppsrc/classification.cpp
+              src/main/cpp/cppsrc/FaceVeri.cpp
+              src/main/cpp/cppsrc/feature_descriptor.cpp
+              src/main/cpp/cppsrc/helper.cpp
+              src/main/cpp/cppsrc/hog.cpp
+              src/main/cpp/cppsrc/ldmarkmodel.cpp
             )
 
 # Searches for a specified prebuilt library and stores the path as a
@@ -36,6 +42,9 @@ find_library( # Sets the name of the path variable.
               log )
 
 include_directories(src/main/cpp/test/)
+include_directories(src/main/cpp/android_lib/opencv/sdk/native/jni/include/)
+include_directories(src/main/cpp/cppsrc/)
+include_directories(src/main/cpp/android_lib/caffe/include/)
 
 # Specifies libraries CMake should link to your target library. You
 # can link multiple libraries, such as libraries you define in the
